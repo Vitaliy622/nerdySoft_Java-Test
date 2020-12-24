@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Coordinate Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<h1>View Coordinate</h1>
+<a href="/coordinates">Back to Coordinate List</a>
+<br/><br/>
+{{#coordinate}}
+    <table border="0">
+        <tr>
+            <td>ID</td>
+            <td>:</td>
+            <td>{{id}}</td>
+        </tr>
+        <tr>
+            <td>x1</td>
+            <td>:</td>
+            <td>{{x1}}</td>
+        </tr>
+        <tr>
+            <td>x2</td>
+            <td>:</td>
+            <td>{{x2}}</td>
+        </tr>
+        <tr>
+            <td>x3</td>
+            <td>:</td>
+            <td>{{x3}}</td>
+        </tr>
+        <tr>
+            <td>x4</td>
+            <td>:</td>
+            <td>{{x4}}</td>
+        </tr>
+        <tr>
+            <td>y1</td>
+            <td>:</td>
+            <td>{{y1}}</td>
+        </tr>
+        <tr>
+            <td>y2</td>
+            <td>:</td>
+            <td>{{y2}}</td>
+        </tr>
+        <tr>
+            <td>y3</td>
+            <td>:</td>
+            <td>{{y3}}</td>
+        </tr>
+        <tr>
+        <td>y4</td>
+        <td>:</td>
+        <td>{{y4}}</td>
+    </tr>
+    </table>
+    <br/><br/>
+    {{#allowDelete}}
+        <form action="/coordinates/{{id}}/delete" method="POST">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}"/>
+            Delete this user? <input type="submit" value="Yes" />
+        </form>
+    {{/allowDelete}}
+    {{^allowDelete}}
+        <div>
+            <a href="/coordinates/{{id}}/edit">Edit</a> |
+            <a href="/coordinates/{{id}}/delete">Delete</a>
+        </div>
+    {{/allowDelete}}
+{{/coordinate}}
+{{#errorMessage}}
+    <div class="error">{{errorMessage}}</div>
+{{/errorMessage}}
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Coordinate List</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<h1>Coordinate List</h1>
+
+<div>
+    <nobr>
+        <a href="/coordinates/add">Coordinate</a>
+        <a href="/">Back to Index</a>
+    </nobr>
+</div>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>x1</th>
+            <th>x2</th>
+            <th>x3</th>
+            <th>x4</th>
+            <th>y1</th>
+            <th>y2</th>
+            <th>y3</th>
+            <th>y4</th>
+        </tr>
+        {{#coordinates}}
+            <tr>
+                <td><a href="/coordinates/{{id}}">{{id}}</a></td>
+                <td>{{x1}}</td>
+                <td>{{x2}}</td>
+                <td>{{x3}}</td>
+                <td>{{x4}}</td>
+                <td>{{y1}}</td>
+                <td>{{y2}}</td>
+                <td>{{y3}}</td>
+                <td>{{y4}}</td>
+            </tr>
+        {{/coordinates}}
+    </table>
+</div>
+<br/><br/>
+<div>
+    <nobr>
+        {{#hasPrev}}<a href="/coordinates?page={{prev}}">Prev</a>&nbsp;&nbsp;&nbsp;{{/hasPrev}}
+        {{#hasNext}}<a href="/coordinates?page={{next}}">Next</a>{{/hasNext}}
+    </nobr>
+</div>
+</body>
+</html>
