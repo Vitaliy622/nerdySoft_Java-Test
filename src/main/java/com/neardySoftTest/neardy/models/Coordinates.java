@@ -3,7 +3,7 @@ package com.neardySoftTest.neardy.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Coordinates")
+@Table(name="coordinates")
 public class Coordinates {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
