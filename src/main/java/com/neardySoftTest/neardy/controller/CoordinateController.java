@@ -160,10 +160,19 @@ public class CoordinateController {
     }
 
     @PostMapping(value = {"/coordinates/{coordinateId}/edit"})
-    public String updateUser(Model model,
+    public String updateCoordinate(Model model,
                              @PathVariable long coordinateId,
-                             @ModelAttribute("coordinate") Coordinates coordinate) {
+                                   @RequestParam int x1,
+                                   @RequestParam int x2,
+                                   @RequestParam int x3,
+                                   @RequestParam int x4,
+                                   @RequestParam int y1,
+                                   @RequestParam int y2,
+                                   @RequestParam int y3,
+                                   @RequestParam int y4
+                             ) {
         try {
+            Coordinates coordinate=new Coordinates(x1,x2,x3,x4,y1,y2,y3,y4);
             coordinate.setId(coordinateId);
             coordinateService.updateCoordinates(coordinate);
             return "redirect:/coordinates/" + String.valueOf(coordinate.getId());
