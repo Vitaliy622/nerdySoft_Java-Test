@@ -6,6 +6,38 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
 <body>
+<canvas id="canvas" width="750" height="400"  >Your browser not supported</canvas>
+{{#coordinate}}
+<script>
+let x={{x1}}*100;
+let y={{y1}}*100;
+let x2={{x2}}*100;
+let y2={{y2}}*100;
+let x3={{x3}}*100;
+let y3={{y3}}*100;
+let x4={{x4}}*100;
+let y4={{y4}}*100;
+
+    var
+    canv = document.getElementById('canvas'),
+    ctx  = canv.getContext('2d');
+
+
+    ctx.moveTo(x,y);
+    ctx.lineTo(x2,y2);
+    ctx.stroke();
+
+
+    ctx.lineTo(x3,y3);
+    ctx.stroke();
+
+
+    ctx.lineTo(x4,y4);
+    ctx.stroke();
+    ctx.lineTo(x,y);
+    ctx.stroke();
+</script>
+{{/coordinate}}
 <h1>View Coordinate</h1>
 <a href="/coordinates">Back to Coordinate List</a>
 <br/><br/>
