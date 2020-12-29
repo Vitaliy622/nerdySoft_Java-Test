@@ -20,62 +20,7 @@ public class CoordinateController {
 
     @Autowired
     private CoordinateServiceImpl coordinateService;
-/*
-    @RequestMapping(value = "/")
-    public ModelAndView coordinatesList(ModelAndView model) {
-        List<Coordinates>coordinatesList=coordinateService.showAllCoordinates();
-        model.addObject("coordinatesList",coordinatesList);
-        model.setViewName("home");
-        return model;
-    }
-    @GetMapping(value="/newCoordinates")
-    public ModelAndView newCoordinates(ModelAndView model){
-        Coordinates coordinates=new Coordinates();
-        model.addObject("coordinates",coordinates);
-        model.setViewName("CoordinatesForm");
-        return model;
-    }
-    @RequestMapping(value = "/deleteCoordinates",method = RequestMethod.GET)
-    public ModelAndView deleteCoordinates(HttpServletRequest request){
-        Long coordinatesId=Long.parseLong(request.getParameter("id"));
-        Optional<Coordinates> coordinates=coordinateService.getCoordinates(coordinatesId);
-        return new ModelAndView("redirect:/");
-    }
-    @RequestMapping(value="/saveCoordinates",method = RequestMethod.POST)
-    public ModelAndView saveCoordinates(@ModelAttribute Coordinates coordinates){
-        if(coordinates.getId()==0){
-            coordinateService.saveCoordinate(coordinates);
-        }else{
-            coordinateService.updateCoordinates(coordinates);
-        }
-        return new ModelAndView("main");
-    }
-    @RequestMapping(value="/updateCoordinates",method = RequestMethod.GET)
-    public ModelAndView updateCoordinates(HttpServletRequest request){
-        Long coordinateId=Long.parseLong(request.getParameter("id"));
-        Optional<Coordinates> coordinates = coordinateService.getCoordinates(coordinateId);
-        ModelAndView model=new ModelAndView("CoordinatesForm");
-        model.addObject("coordinate",coordinates);
-        return model;
-    }*/
-   /* @PostMapping("main")
-    public String add(@RequestParam int x1,
-                      @RequestParam int x2,
-                      @RequestParam int x3,
-                      @RequestParam int x4,
-                      @RequestParam int y1,
-                      @RequestParam int y2,
-                      @RequestParam int y3,
-                      @RequestParam int y4,
-                      Map<String,Object > models, Model model2){
 
-        Coordinates coordinate= new Coordinates(x1,x2,x3,x4,y1,y2,y3,y4);
-        coordinateService.saveCoordinate(coordinate);
-        Iterable<Coordinates>coordinates= coordinateService.showAllCoordinates();
-        models.put("coordinates",coordinates);
-        model2.addAttribute("coordinates",coordinateService.showAllCoordinates());
-        return "home";
-    }*/
     @Value("${msg.title}")
     private String title;
 
