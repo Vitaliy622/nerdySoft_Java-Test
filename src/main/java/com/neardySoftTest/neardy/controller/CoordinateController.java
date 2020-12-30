@@ -71,12 +71,16 @@ public class CoordinateController {
                           @RequestParam int x2,
                           @RequestParam int x3,
                           @RequestParam int x4,
+                          @RequestParam int x5,
+                          @RequestParam int x6,
                           @RequestParam int y1,
                           @RequestParam int y2,
                           @RequestParam int y3,
-                          @RequestParam int y4) {
+                          @RequestParam int y4,
+                          @RequestParam int y5,
+                          @RequestParam int y6) {
         try {
-            Coordinates newCoordinate = new Coordinates(x1,x2,x3,x4,y1,y2,y3,y4);
+            Coordinates newCoordinate = new Coordinates(x1,x2,x3,x4,x5,x6,y1,y2,y3,y4,y5,y6);
             coordinateService.save(newCoordinate);
             return "redirect:/coordinates/" + newCoordinate.getId();
         } catch (Exception ex) {
@@ -111,13 +115,17 @@ public class CoordinateController {
                                    @RequestParam int x2,
                                    @RequestParam int x3,
                                    @RequestParam int x4,
+                                   @RequestParam int x5,
+                                   @RequestParam int x6,
                                    @RequestParam int y1,
                                    @RequestParam int y2,
                                    @RequestParam int y3,
-                                   @RequestParam int y4
+                                   @RequestParam int y4,
+                                   @RequestParam int y5,
+                                   @RequestParam int y6
                              ) {
         try {
-            Coordinates coordinate=new Coordinates(x1,x2,x3,x4,y1,y2,y3,y4);
+            Coordinates coordinate=new Coordinates(x1,x2,x3,x4,x5,x6,y1,y2,y3,y4,y5,y6);
             coordinate.setId(coordinateId);
             coordinateService.updateCoordinates(coordinate);
             return "redirect:/coordinates/" + String.valueOf(coordinate.getId());

@@ -17,6 +17,10 @@ let x3={{x3}}*100;
 let y3={{y3}}*100;
 let x4={{x4}}*100;
 let y4={{y4}}*100;
+let x5={{x5}}*100;
+let y5={{y5}}*100;
+let x6={{x6}}*100;
+let y6={{y6}}*100;
 
     var
     canv = document.getElementById('canvas'),
@@ -34,8 +38,20 @@ let y4={{y4}}*100;
 
     ctx.lineTo(x4,y4);
     ctx.stroke();
+    if(x5==0&&y5==0){
+        x6=0;
+        y6=0;
+        ctx.lineTo(x,y);
+        ctx.stroke();
+    }else{
+    ctx.lineTo(x5,y5);
+    ctx.stroke();
+    ctx.lineTo(x6,y6);
+    ctx.stroke();
     ctx.lineTo(x,y);
     ctx.stroke();
+    }
+
 </script>
 {{/coordinate}}
 <h1>View Coordinate</h1>
@@ -69,6 +85,16 @@ let y4={{y4}}*100;
             <td>{{x4}}</td>
         </tr>
         <tr>
+            <td>x5</td>
+            <td>:</td>
+            <td>{{x5}}</td>
+        </tr>
+        <tr>
+            <td>x6</td>
+            <td>:</td>
+            <td>{{x6}}</td>
+        </tr>
+        <tr>
             <td>y1</td>
             <td>:</td>
             <td>{{y1}}</td>
@@ -88,6 +114,16 @@ let y4={{y4}}*100;
         <td>:</td>
         <td>{{y4}}</td>
     </tr>
+        <tr>
+            <td>y5</td>
+            <td>:</td>
+            <td>{{y5}}</td>
+        </tr>
+        <tr>
+            <td>y6</td>
+            <td>:</td>
+            <td>{{y6}}</td>
+        </tr>
     </table>
     <br/><br/>
     {{#allowDelete}}
