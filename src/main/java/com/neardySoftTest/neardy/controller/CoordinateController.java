@@ -84,8 +84,6 @@ public class CoordinateController {
             coordinateService.save(newCoordinate);
             return "redirect:/coordinates/" + newCoordinate.getId();
         } catch (Exception ex) {
-            // log exception first,
-            // then show error
             String errorMessage = ex.getMessage();
             logger.error(errorMessage);
             model.addAttribute("errorMessage", errorMessage);
@@ -128,10 +126,8 @@ public class CoordinateController {
             Coordinates coordinate=new Coordinates(x1,x2,x3,x4,x5,x6,y1,y2,y3,y4,y5,y6);
             coordinate.setId(coordinateId);
             coordinateService.updateCoordinates(coordinate);
-            return "redirect:/coordinates/" + String.valueOf(coordinate.getId());
+            return "redirect:/coordinates/" + coordinate.getId();
         } catch (Exception ex) {
-            // log exception first,
-            // then show error
             String errorMessage = ex.getMessage();
             logger.error(errorMessage);
             model.addAttribute("errorMessage", errorMessage);
