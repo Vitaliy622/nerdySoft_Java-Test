@@ -16,7 +16,7 @@ import java.util.List;
 public class CoordinateController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    private final int ROW_PER_PAGE = 5;
+    private final int ROW_PER_PAGE = 15;
 
     @Autowired
     private CoordinateServiceImpl coordinateService;
