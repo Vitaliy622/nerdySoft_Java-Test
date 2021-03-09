@@ -6,8 +6,8 @@
 ### 2. docker build -t [name] .
 ### 3. Deploying the application
 ### 3.1. docker pull mysql:8.0.21
-### 3.2. docker run --name localhost -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=neardy -d mysql:8.0.21
-### 3.3. docker run -d -p 8080:8080 --name neardy --link localhost:mysql neardy
+### 3.2. docker run --name localhost -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=[name] -d mysql:8.0.21
+### 3.3. docker run -d -p 8080:8080 --name [name] --link localhost:mysql [name]
 
 ## How to use:
 ### Open page on: http://localhost:8080/
