@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CoordinateServiceImpl  {
+public class CoordinateServiceImpl {
     @Autowired
     private CoordinateRepository coordinateRepository;
 
@@ -31,8 +31,7 @@ public class CoordinateServiceImpl  {
     public void deleteCoordinates(Long id) throws Exception {
         if (!existsById(id)) {
             throw new Exception("Cannot find Coordinates with id: " + id);
-        }
-        else {
+        } else {
             coordinateRepository.deleteById(id);
         }
     }
@@ -62,5 +61,8 @@ public class CoordinateServiceImpl  {
             throw new Exception("Coordinate with id: " + coordinate.getId() + " already exists");
         }
         return coordinateRepository.save(coordinate);
+    }
+    public List<Coordinates>getAll(){
+        return (List<Coordinates>) coordinateRepository.findAll();
     }
 }
