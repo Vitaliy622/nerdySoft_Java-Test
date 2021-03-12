@@ -3,11 +3,11 @@ package com.neardySoftTest.neardy.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="coordinates")
+@Table(name = "coordinates")
 public class Coordinates {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long id;
+    private Long id;
 
     @Column
     private int x1;
@@ -60,7 +60,7 @@ public class Coordinates {
         this.y6 = y6;
     }
 
-    public Coordinates(){
+    public Coordinates() {
     }
 
     public void setId(Long id) {
